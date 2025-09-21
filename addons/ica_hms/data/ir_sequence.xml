@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="seq_hms_booking" model="ir.sequence">
+        <field name="name">Booking</field>
+        <field name="code">hms.booking</field>
+        <field name="prefix">B</field>
+        <field name="padding">6</field>
+    </record>
+
+</odoo>

@@ -12,6 +12,8 @@
                        decoration-info="type == 'normal'"
                        decoration-warning="type=='vip'"
                        decoration-success="type == 'vvip'"/>
+                <field name="amount"/>
+                <field name="currency_id" optional="hide"/>
             </list>
         </field>
     </record>
