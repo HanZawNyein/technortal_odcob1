@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hotel_1" model="hms.hotel">
+            <field name="name">Demo Hotel 1</field>
+            <field name="currency_id" ref="base.MMK"/>
+        </record>
+    </data>
+</odoo>

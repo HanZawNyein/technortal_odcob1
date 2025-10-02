@@ -11,5 +11,9 @@
 
         "views/menus.xml",
     ],
+    "demo":[
+
+        "data/hms_hotel.xml",
+    ],
     "license":"LGPL-3"
 }
