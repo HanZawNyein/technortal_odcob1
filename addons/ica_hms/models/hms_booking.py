@@ -9,6 +9,7 @@ class HmsBooking(models.Model):
     _rec_name = "partner_id"
 
     partner_id = fields.Many2one('res.partner', required=True, tracking=True)
+    category_ids = fields.Many2many('res.partner.category',related="partner_id.category_id")
     room_id = fields.Many2one('hms.room', required=True, tracking=True)
     hotel_id = fields.Many2one('hms.hotel', related="room_id.hotel_id")
     currency_id = fields.Many2one('res.currency', related="room_id.currency_id")

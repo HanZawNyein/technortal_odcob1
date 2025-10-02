@@ -22,12 +22,13 @@
                 <sheet>
                     <div class="oe_title pe-0 w-100 mw-100" name="title">
                         <h1 class="d-flex flex-row justify-content-between">
-                            <field name="reference" class="text-truncate" placeholder="Sequence NUmber"/>
+                            <field name="reference" class="text-truncate" placeholder="Sequence Number"/>
                         </h1>
                     </div>
                     <group>
                         <group string="Guest Information">
                             <field name="partner_id"/>
+                            <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         </group>
                         <group string="Hotel Information">
                             <field name="room_id"/>
