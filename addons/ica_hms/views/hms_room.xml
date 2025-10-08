@@ -26,16 +26,16 @@
 
 
                 <sheet>
-                      <div class="oe_button_box" name="button_box">
-                    <button name="action_view_bookings" type="object"
-                            class="oe_stat_button" icon="fa-calendar">
-                        <div class="o_stat_info">
-                            <span class="o_stat_text">
-                                <field name="booking_count"/>
-                            </span>
-                        </div>
-                    </button>
-                </div>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_bookings" type="object"
+                                class="oe_stat_button" icon="fa-calendar">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">
+                                    <field name="booking_count"/>
+                                </span>
+                            </div>
+                        </button>
+                    </div>
                     <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
                     <group>
                         <group>
