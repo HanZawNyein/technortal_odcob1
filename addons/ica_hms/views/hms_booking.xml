@@ -6,16 +6,16 @@
         <field name="arch" type="xml">
             <form string="hms_booking_form">
                 <header>
-                    <button name="action_draft" string="Draft" type="object"/>
-                    <button name="action_confirm" string="Confirm" type="object" class="btn btn-primary"/>
+                    <button name="action_draft" string="Draft" type="object" invisible="state != 'confirmed'"/>
+                    <button name="action_confirm" string="Confirm" type="object" class="btn btn-primary" invisible="state != 'draft'"/>
                     <!--                    invisible="state != 'draft'"-->
-                    <button name="action_paid" string="Paid" type="object" class="btn btn-success"/>
-                    <!--                    invisible="state != 'confirmed'"-->
-                    <button name="action_check_in" string="Check In" type="object" class="btn btn-info"/>
+                    <button name="action_paid" string="Paid" type="object" class="btn btn-success" invisible="state != 'confirmed'"
+                    confirm="Are you sure to paid ?"/>
+                    <button name="action_check_in" string="Check In" type="object" class="btn btn-info" invisible="state != 'paid'"/>
                     <!--                     invisible="state != 'paid'"-->
-                    <button name="action_check_out" string="Check Out" type="object" class="btn btn-warning"/>
+                    <button name="action_check_out" string="Check Out" type="object" class="btn btn-warning" invisible="state != 'check_in'"/>
                     <!--                     invisible="state != 'check_in'"-->
-                    <button name="action_cancel" string="Cancel" type="object" class="btn btn-danger"/>
+                    <button name="action_cancel" string="Cancel" type="object" class="btn btn-danger" invisible="state not in ['draft','confirmed']"/>
                     <!--                     invisible="state not in ['draft','confirmed']"-->
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,paid,check_in,check_out"/>
                 </header>
@@ -34,7 +34,13 @@
                             <field name="room_id"/>
                             <field name="hotel_id"/>
                             <field name="currency_id"/>
-                            <field name="amount"/>
+                            <field name="amount" widget="monetary"/>
+                        </group>
+                        <group string="Time Information">
+                            <field name="check_in_datetime"/>
+                            <field name="check_out_datetime"/>
+                            <field name="create_uid"/>
+                            <field name="create_date"/>
                         </group>
                     </group>
                 </sheet>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="demo_room_1" model="hms.room">
+            <field name="name">Demo Room 1</field>
+            <field name="type">normal</field>
+            <field name="amount">100</field>
+            <field name="hotel_id" ref="ica_hms.hotel_1"/>
+        </record>
+    </data>
+</odoo>
