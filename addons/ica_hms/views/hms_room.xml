@@ -13,7 +13,7 @@
                 <field name="currency_id"/>
                 <templates>
                     <t t-name="card" class="flex-row">
-                        <!--                            <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>-->
+                        <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
                         <aside class="o_kanban_aside_full">
                             <t t-if="record.hotel_id.raw_value">
                                 <div class="position-relative w-100 h-auto m-0">
@@ -41,7 +41,8 @@
                             <field name="amount" widget="monetary"/>
                         </main>
                         <footer>
-                            <button name="action_view_bookings" type="object" string="Bookings" class="btn btn-primary"/>
+                            <button name="action_view_bookings" type="object" string="Bookings"
+                                    class="btn btn-primary"/>
                         </footer>
                     </t>
                 </templates>
