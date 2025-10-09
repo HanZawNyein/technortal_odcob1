@@ -4,8 +4,12 @@
 ## `Oct 9 2025`
 
 - connect with employee
-- allow hotels in employee
 - wizard
 - domain
 - context
+
+
+## Tomorrow
+- settings default payment method for paid
+- allow hotels in employee
 - shell

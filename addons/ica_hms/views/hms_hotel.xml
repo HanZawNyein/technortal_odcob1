@@ -22,6 +22,9 @@
                                 <field name="currency_id"/>
                             </div>
                         </main>
+                        <footer>
+                            <button name="action_create_booking" string="Create Booking" type="object" class="btn btn-outline-success"/>
+                        </footer>
                     </t>
                 </templates>
             </kanban>
@@ -60,7 +63,14 @@
                     </group>
                     <notebook>
                         <page name="rooms" string="Rooms">
-                            <field name="room_ids"/>
+                            <field name="room_ids" mode="kanban"/>
+<!--                                <list>-->
+<!--                                    <field name="name"/>-->
+<!--                                    <field name="type"/>-->
+<!--                                    <field name="amount"/>-->
+<!--                                    <field name="currency_id"/>-->
+<!--                                </list>-->
+<!--                            </field>-->
                         </page>
                     </notebook>
                 </sheet>

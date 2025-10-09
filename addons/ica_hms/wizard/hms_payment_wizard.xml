@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="hms_payment_wizard_view_form" model="ir.ui.view">
+        <field name="name">hms_payment_wizard_view_form_view_form</field>
+        <field name="model">hms.payment.wizard</field>
+        <field name="arch" type="xml">
+            <form string="hms_payment_wizard_view_form_form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="payment_method_id"/>
+                        </group>
+                        <group>
+                            <field name="amount"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_create_payment" type="object" string="Create Payment" class="btn btn-primary"/>
+                    <button string="Discard" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="hms_payment_action" model="ir.actions.act_window">
+        <field name="name">Payment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hms.payment.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -10,8 +10,8 @@ class HmsBooking(models.Model):
 
     partner_id = fields.Many2one('res.partner', required=False, tracking=True,copy=False)
     category_ids = fields.Many2many('res.partner.category',related="partner_id.category_id")
+    hotel_id = fields.Many2one('hms.hotel')
     room_id = fields.Many2one('hms.room', required=True, tracking=True,copy=True)
-    hotel_id = fields.Many2one('hms.hotel', related="room_id.hotel_id")
     currency_id = fields.Many2one('res.currency', related="room_id.currency_id")
     amount = fields.Monetary(tracking=True,currency_field='currency_id')
     reference = fields.Char(default=lambda self: _("New"), readonly=True,copy=False)
@@ -25,6 +25,10 @@ class HmsBooking(models.Model):
     ], default='draft', tracking=True)
     check_in_datetime = fields.Datetime(tracking=True,copy=False,readonly=True)
     check_out_datetime = fields.Datetime(tracking=True,copy=False,readonly=True)
+
+    employee_id =fields.Many2one('hr.employee',default=lambda self: self.env.user.employee_id)
+    job_id = fields.Many2one('hr.job',related="employee_id.job_id")
+    department_id = fields.Many2one('hr.department',related='employee_id.department_id')
 
     @api.onchange('room_id')
     def _onchange_room(self):
@@ -77,3 +81,6 @@ class HmsBooking(models.Model):
 
     def action_cancel(self):
         self._change_state('cancelled')
+
+
+
