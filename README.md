@@ -12,4 +12,6 @@
 ## Tomorrow
 - settings default payment method for paid
 - allow hotels in employee
-- shell
+- CLI
+  - shell
+  - orm
