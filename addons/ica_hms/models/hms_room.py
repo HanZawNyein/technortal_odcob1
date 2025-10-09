@@ -2,6 +2,7 @@ from odoo import api, fields, models
 
 class HmsRoom(models.Model):
     _name = 'hms.room' # hms_room
+    _inherit = ['image.mixin']
     _description = 'HmsRoom'
 
     name = fields.Char(required=True)
@@ -34,3 +35,5 @@ class HmsRoom(models.Model):
             "type":"ir.actions.act_window",
             "res_model":"hms.booking",
         }
+
+
