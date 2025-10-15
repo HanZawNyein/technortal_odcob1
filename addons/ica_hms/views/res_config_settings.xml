@@ -14,7 +14,16 @@
                         <setting id="variant_options" help="Manage Your Hotels">
                             <field name="hms_default_payment_method"/>
                         </setting>
+<!--                        <settings>-->
+<!--                            <field name="is_available"/>-->
+<!--                        </settings>-->
+                        <setting id="discount_sale_order_lines"
+                                 title="Apply manual discounts on sales order lines or display discounts computed from pricelists (option to activate in the pricelist configuration)."
+                                 help="Grant discounts on sales order lines">
+                            <field name="is_available"/>
+                        </setting>
                     </block>
+
                 </app>
             </xpath>
 
