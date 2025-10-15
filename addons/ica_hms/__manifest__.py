@@ -15,6 +15,9 @@
 
         "views/menus.xml",
     ],
+    "images":[
+        "static/description/icon.png",
+    ],
     "demo":[
         "data/hms_hotel.xml",
         "data/hms_room.xml",
