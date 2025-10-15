@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-    <record id="hms_room_view_kanban" model="ir.ui.view">
-        <field name="name">hms_room_view_kanban</field>
-        <field name="model">hms.room</field>
-        <field name="arch" type="xml">
-            <kanban sample="1">
-                <field name="image_128"/>
-                <field name="hotel_id"/>
-                <field name="active"/>
-                <field name="amount"/>
-                <field name="currency_id"/>
-                <templates>
-                    <t t-name="card" class="flex-row">
-                        <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
-                        <aside class="o_kanban_aside_full">
-                            <t t-if="record.hotel_id.raw_value">
-                                <div class="position-relative w-100 h-auto m-0">
-                                    <field name="image_128" alt="Contact image" class="h-100" widget="image"
-                                           options="{'img_class': 'object-fit-contain'}"/>
-                                    <field
-                                            name="hotel_id" class="position-absolute bottom-0 end-0 w-25 bg-light"
-                                            widget="image"
-                                            options="{'preview_image': 'image_128', 'img_class': 'object-fit-contain'}"/>
-                                </div>
-                            </t>
-                            <t t-else="">
-                                <field name="image_128" class="w-100 h-auto m-0" widget="image"
-                                       options="{'img_class': 'object-fit-contain w-100 h-100'}"/>
-                            </t>
-                        </aside>
-                        <main class="ps-2">
-                            <div class="mb-1">
-                                <field name="name" class="mb-0 fw-bold fs-5"/>
-                                <t t-if="record.hotel_id">
-                                    ,<field name="hotel_id" class="mb-0 fw-bold fs-5"/>
-                                </t>
-                            </div>
-                            <field name="type" widget="badge"/>
-                            <field name="amount" widget="monetary"/>
-                        </main>
-                        <footer>
-                            <button name="action_view_bookings" type="object" string="Bookings"
-                                    class="btn btn-primary"/>
-                        </footer>
-                    </t>
-                </templates>
-            </kanban>
-        </field>
-    </record>
+<!--    <record id="hms_room_view_kanban" model="ir.ui.view">-->
+<!--        <field name="name">hms_room_view_kanban</field>-->
+<!--        <field name="model">hms.room</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <kanban sample="1">-->
+<!--                <field name="image_128"/>-->
+<!--                <field name="company_id"/>-->
+<!--                <field name="active"/>-->
+<!--                <field name="amount"/>-->
+<!--                <field name="currency_id"/>-->
+<!--                <templates>-->
+<!--                    <t t-name="card" class="flex-row">-->
+<!--                        <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>-->
+<!--                        <aside class="o_kanban_aside_full">-->
+<!--                            <t t-if="record.hotel_id.raw_value">-->
+<!--                                <div class="position-relative w-100 h-auto m-0">-->
+<!--                                    <field name="image_128" alt="Contact image" class="h-100" widget="image"-->
+<!--                                           options="{'img_class': 'object-fit-contain'}"/>-->
+<!--                                    <field-->
+<!--                                            name="company_id" class="position-absolute bottom-0 end-0 w-25 bg-light"-->
+<!--                                            widget="image"-->
+<!--                                            options="{'preview_image': 'image_128', 'img_class': 'object-fit-contain'}"/>-->
+<!--                                </div>-->
+<!--                            </t>-->
+<!--                            <t t-else="">-->
+<!--                                <field name="image_128" class="w-100 h-auto m-0" widget="image"-->
+<!--                                       options="{'img_class': 'object-fit-contain w-100 h-100'}"/>-->
+<!--                            </t>-->
+<!--                        </aside>-->
+<!--                        <main class="ps-2">-->
+<!--                            <div class="mb-1">-->
+<!--                                <field name="name" class="mb-0 fw-bold fs-5"/>-->
+<!--                                <t t-if="record.hotel_id">-->
+<!--                                    ,<field name="company_id" class="mb-0 fw-bold fs-5"/>-->
+<!--                                </t>-->
+<!--                            </div>-->
+<!--                            <field name="type" widget="badge"/>-->
+<!--                            <field name="amount" widget="monetary"/>-->
+<!--                        </main>-->
+<!--                        <footer>-->
+<!--                            <button name="action_view_bookings" type="object" string="Bookings"-->
+<!--                                    class="btn btn-primary"/>-->
+<!--                        </footer>-->
+<!--                    </t>-->
+<!--                </templates>-->
+<!--            </kanban>-->
+<!--        </field>-->
+<!--    </record>-->
 
     <record id="hms_room_view_list" model="ir.ui.view">
         <field name="name">hms_room_view_list</field>
@@ -56,7 +56,7 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
-                <field name="hotel_id"/>
+                <field name="company_id"/>
                 <field name="type" widget="badge"
                        decoration-info="type == 'normal'"
                        decoration-warning="type=='vip'"
@@ -90,7 +90,7 @@
                             <field name="name"/>
                             <field name="currency_id" invisible="1"/>
                             <field name="amount"/>
-                            <field name="hotel_id"/>
+                            <field name="company_id"/>
                         </group>
                         <group>
                             <field name="type" widget="radio"/>

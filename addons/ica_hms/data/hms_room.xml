@@ -5,7 +5,7 @@
             <field name="name">Demo Room 1</field>
             <field name="type">normal</field>
             <field name="amount">100</field>
-            <field name="hotel_id" ref="ica_hms.hotel_1"/>
+            <field name="company_id" ref="ica_hms.hotel_1"/>
         </record>
     </data>
 </odoo>

@@ -10,8 +10,11 @@ class HmsBooking(models.Model):
 
     partner_id = fields.Many2one('res.partner', required=False, tracking=True,copy=False)
     category_ids = fields.Many2many('res.partner.category',related="partner_id.category_id")
-    hotel_id = fields.Many2one('hms.hotel')
+    # hotel_id = fields.Many2one('hms.hotel')
+    company_id = fields.Many2one('res.company')
     room_id = fields.Many2one('hms.room', required=True, tracking=True,copy=True)
+    hms_default_payment_method= fields.Many2one('hms.payment.method', string='Payment Method',
+                                                related='company_id.hms_default_payment_method',readonly=False)
     currency_id = fields.Many2one('res.currency', related="room_id.currency_id")
     amount = fields.Monetary(tracking=True,currency_field='currency_id')
     reference = fields.Char(default=lambda self: _("New"), readonly=True,copy=False)

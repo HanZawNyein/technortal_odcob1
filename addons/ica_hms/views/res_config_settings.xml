@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Inherit Form View to Modify it -->
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res_config_settings_view_form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//form" position="inside">
+                <!-- Add your fields or attributes here -->
+                <app string="HMS" data-string="HMS" name="ica_hms">
+                    <block title="Hotel Management System" name="hotel_management_system">
+                        <setting id="variant_options" help="Manage Your Hotels">
+                            <field name="hms_default_payment_method"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

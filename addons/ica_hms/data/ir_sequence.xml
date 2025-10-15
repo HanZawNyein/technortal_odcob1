@@ -6,6 +6,7 @@
         <field name="code">hms.booking</field>
         <field name="prefix">B</field>
         <field name="padding">6</field>
+        <field name="company_id" eval="True"/>
     </record>
 
 </odoo>
