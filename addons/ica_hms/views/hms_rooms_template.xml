@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <template id="hms_room">
+            <h1>Hello</h1>
+<!--            <t t-esc="room_ids"/>-->
+            <t t-foreach="room_ids" t-as="room_id" t-key="room_id.id">
+                <h1><t t-esc="room_id.display_name"/>,<t t-esc="room_id.type"/></h1>
+                <br/>
+            </t>
+        </template>
+    </data>
+</odoo>

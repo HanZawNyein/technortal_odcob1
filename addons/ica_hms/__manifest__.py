@@ -1,7 +1,7 @@
 {
     "name":"Hotel Management System",
     "author":"Agaa, IdeaCode Academy",
-    "depends":["mail","hr","contacts"],
+    "depends":["mail","hr","contacts","website"],
     "data":[
         "data/ir_sequence.xml",
         "security/ir.model.access.csv",
@@ -14,6 +14,8 @@
         "views/res_config_settings.xml",
 
         "views/menus.xml",
+
+        "views/hms_rooms_template.xml",
     ],
     "images":[
         "static/description/icon.png",
