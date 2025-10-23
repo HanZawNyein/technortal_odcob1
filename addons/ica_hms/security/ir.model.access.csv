@@ -1,5 +1,9 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hms_room,hms.room,model_hms_room,,1,1,1,1
+
+access_hms_room_employee,hms.room,model_hms_room,ica_hms.group_employee,1,0,0,0
+access_hms_room_manager,hms.room,model_hms_room,ica_hms.group_manager,1,1,1,0
+access_hms_room_admin,hms.room,model_hms_room,ica_hms.group_admin,1,1,1,1
+
 access_hms_booking,hms.booking,model_hms_booking,,1,1,1,1
 access_hms_payment_method,hms.payment.method,model_hms_payment_method,,1,1,1,1
 access_hms_payment_wizard,hms.payment.wizard,model_hms_payment_wizard,,1,1,1,1

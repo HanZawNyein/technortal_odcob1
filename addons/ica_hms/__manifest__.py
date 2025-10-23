@@ -4,6 +4,8 @@
     "depends":["mail","hr","contacts","website"],
     "data":[
         "data/ir_sequence.xml",
+
+        "security/security.xml",
         "security/ir.model.access.csv",
         "views/hms_booking.xml",
         "views/hms_room.xml",

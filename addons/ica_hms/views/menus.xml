@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <menuitem id="ica_hms_root" name="Hotel Management System">
+    <menuitem id="ica_hms_root" name="Hotel Management System" groups="ica_hms.group_employee">
 <!--        <menuitem id="hms_hotel_category" name="Hotels" action="ica_hms.hms_hotel_action" sequence="0"/>-->
-        <menuitem id="res_company_category" name="Companies" action="base.action_res_company_form" sequence="0"/>
-        <menuitem id="hms_booking_category" name="Bookings" action="ica_hms.hms_booking_action" sequence="1"/>
-        <menuitem id="configuration_category" name="Configuration" sequence="2">
+        <menuitem id="res_company_category" name="Companies" action="base.action_res_company_form" sequence="0" groups="ica_hms.group_manager"/>
+        <menuitem id="hms_booking_category" name="Bookings" action="ica_hms.hms_booking_action" sequence="1" groups="ica_hms.group_employee"/>
+        <menuitem id="configuration_category" name="Configuration" sequence="2" groups="ica_hms.group_manager">
             <menuitem id="hms_room_category" name="Rooms" action="ica_hms.hms_room_action" sequence="0"/>
             <menuitem id="employee_category" name="Employees" action="hr.open_view_employee_list_my" sequence="1"/>
             <menuitem id="department_category" name="Departments" action="hr.hr_department_kanban_action" sequence="2"/>
-            <menuitem id="hms_payment_method_category" name="Payment Methods" action="ica_hms.hms_payment_method_action" sequence="3"/>
+            <menuitem id="hms_payment_method_category" name="Payment Methods" action="ica_hms.hms_payment_method_action" sequence="3" groups="ica_hms.group_admin"/>
             <menuitem id="hms_payment_category" name="Create Payment" action="ica_hms.hms_payment_action" sequence="4"/>
             <menuitem id="contacts_category" name="Contacts" action="contacts.action_contacts" sequence="5"/>
         </menuitem>
