@@ -206,3 +206,6 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 odoo.conf
+
+config/
+odoo_pg_pass
