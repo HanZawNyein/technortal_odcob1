@@ -3,7 +3,7 @@
     <menuitem id="ica_hms_root" name="Hotel Management System" groups="ica_hms.group_employee">
 <!--        <menuitem id="hms_hotel_category" name="Hotels" action="ica_hms.hms_hotel_action" sequence="0"/>-->
         <menuitem id="res_company_category" name="Companies" action="base.action_res_company_form" sequence="0" groups="ica_hms.group_manager"/>
-        <menuitem id="hms_booking_category" name="Bookings" action="ica_hms.hms_booking_action" sequence="1" groups="ica_hms.group_employee"/>
+<!--        <menuitem id="hms_booking_category" name="Bookings" action="ica_hms.hms_booking_action" sequence="1" groups="ica_hms.group_employee"/>-->
         <menuitem id="configuration_category" name="Configuration" sequence="2" groups="ica_hms.group_manager">
             <menuitem id="hms_room_category" name="Rooms" action="ica_hms.hms_room_action" sequence="0"/>
             <menuitem id="employee_category" name="Employees" action="hr.open_view_employee_list_my" sequence="1"/>

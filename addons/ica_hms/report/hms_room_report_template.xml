@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_hms_room">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.html_container">
+<!--                <t t-call="web.basic_layout">-->
+<!--                <t t-call="web.internal_layout">-->
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>
+                            <span t-field="o.name"/>
+                        </h2>
+
+                        <!--                                <tr>-->
+                        <!--                                    <th scope="row">1</th>-->
+                        <!--                                    <td>-->
+                        <!--                                        <span t-field="o.amount"/>-->
+                        <!--                                    </td>-->
+                        <!--                                    <td>-->
+                        <!--                                        <span t-field="o.type"/>-->
+                        <!--                                    </td>-->
+                        <!--                                </tr>-->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Reference</th>
+                                    <th scope="col">Customer</th>
+                                    <th scope="col">Employee</th>
+                                    <th scope="col">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.booking_ids" t-as="booking">
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>
+                                            <t t-out="booking.reference"/>
+                                        </td><td>
+                                        <t t-out="booking.partner_id.display_name"/>
+                                    </td>
+
+                                        <td>
+                                            <t t-out="booking.employee_id.display_name"/>
+                                        </td>
+                                        <td>
+                                            <t t-out="booking.amount"/>
+                                            <t t-out="booking.currency_id.symbol"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <tr>
+                                    <td colspan="4" class="text-end">
+                                        <span>Total</span>
+                                    </td>
+                                    <td class="fw-bolder">
+                                        <span t-out="sum(o.booking_ids.mapped('amount'))"/>
+                                        <t t-out="o.currency_id.symbol"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

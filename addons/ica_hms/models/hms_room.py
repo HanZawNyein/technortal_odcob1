@@ -43,6 +43,7 @@ class HmsRoom(models.Model):
             "domain":[("id","in",self.booking_ids.ids)],
             "type":"ir.actions.act_window",
             "res_model":"hms.booking",
+            "context":{"default_company_id":self.company_id.id,"default_room_id":self.id},
         }
 
 
