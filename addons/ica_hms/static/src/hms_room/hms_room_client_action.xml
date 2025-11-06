@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="ica_hms.hms_room">
+       <Layout display="{ controlPanel: {} }">
+           <t t-set-slot="control-panel-always-buttons">
+                    <button type="button" class="btn btn-primary" title="Print">Print</button>
+           </t>
+           <t t-set-slot="layout-actions">
+                <button t-on-click="printWeb" type="button" class="btn btn-primary" title="Print">Print</button>
+           </t>
+       </Layout>
+        <div class="container mt-5">
+            Hello world
+        <h1>Welcome from IdeaCode Academy!</h1>
+        </div>
+    </t>
+</templates>

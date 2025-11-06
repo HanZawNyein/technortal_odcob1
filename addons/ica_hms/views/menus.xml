@@ -11,6 +11,7 @@
             <menuitem id="hms_payment_method_category" name="Payment Methods" action="ica_hms.hms_payment_method_action" sequence="3" groups="ica_hms.group_admin"/>
             <menuitem id="hms_payment_category" name="Create Payment" action="ica_hms.hms_payment_action" sequence="4"/>
             <menuitem id="contacts_category" name="Contacts" action="contacts.action_contacts" sequence="5"/>
+            <menuitem id="hms_hotel_client_category" name="Client Action" action="ica_hms.hms_hotel_client_action" sequence="6"/>
         </menuitem>
     </menuitem>
 </odoo>

@@ -1,7 +1,7 @@
 {
     "name":"Hotel Management System",
     "author":"Agaa, IdeaCode Academy",
-    "depends":["mail","hr","contacts","website"],
+    "depends":["mail","hr","contacts","web"],
     "data":[
         "data/ir_sequence.xml",
 
@@ -14,6 +14,7 @@
         "views/res_partner.xml",
         "views/res_config_settings.xml",
         "views/hms_booking.xml",
+        "views/hms_hotel_client_action.xml",
 
         "views/menus.xml",
         #
@@ -21,8 +22,8 @@
 
 
         # "report/hms_room.xml",
-        "report/hms_room_report_template.xml",
-        "report/hms_room_report_action.xml",
+        # "report/hms_room_report_template.xml",
+        # "report/hms_room_report_action.xml",
     ],
     "images":[
         "static/description/icon.png",
@@ -34,5 +35,10 @@
     # "external_dependencies":{
     #     "python":["numpy"],
     # },
+    "assets":{
+        "web.assets_backend":[
+          "ica_hms/static/src/hms_room/**/*",
+        ],
+    },
     "license":"LGPL-3"
 }
