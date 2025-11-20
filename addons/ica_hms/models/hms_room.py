@@ -1,7 +1,11 @@
 from odoo import api, fields, models
+import logging
+
+_logger = logging.getLogger(__name__)
+
 
 class HmsRoom(models.Model):
-    _name = 'hms.room' # hms_room
+    _name = 'hms.room'  # hms_room
     _inherit = ['image.mixin']
     _description = 'HmsRoom'
 
@@ -19,31 +23,48 @@ class HmsRoom(models.Model):
     ], default='normal')
 
     # hotel_id = fields.Many2one('hms.hotel',required=True)
-    company_id = fields.Many2one('res.company',required=True)
-    currency_id = fields.Many2one('res.currency',related="company_id.currency_id")
+    company_id = fields.Many2one('res.company', required=True)
+    currency_id = fields.Many2one('res.currency', related="company_id.currency_id")
     amount = fields.Monetary(currency_field='currency_id')
     active = fields.Boolean(default=True)
-    booking_ids = fields.One2many('hms.booking','room_id', string='Bookings')
+    booking_ids = fields.One2many('hms.booking', 'room_id', string='Bookings')
     booking_count = fields.Integer(compute='_compute_booking_count')
 
 
 
-
+    def _action_confirm(self, a=0, b=...):
+        ...  # pass
 
     @api.depends('booking_ids')
     def _compute_booking_count(self):
         for rec in self:
             rec.booking_count = len(rec.booking_ids)
 
-
     def action_view_bookings(self):
         return {
-            "name":f"{self.name}'s bookings",
-            "view_mode":"list,form",
-            "domain":[("id","in",self.booking_ids.ids)],
-            "type":"ir.actions.act_window",
-            "res_model":"hms.booking",
-            "context":{"default_company_id":self.company_id.id,"default_room_id":self.id},
+            "name": f"{self.name}'s bookings",
+            "view_mode": "list,form",
+            "domain": [("id", "in", self.booking_ids.ids)],
+            "type": "ir.actions.act_window",
+            "res_model": "hms.booking",
+            "context": {"default_company_id": self.company_id.id, "default_room_id": self.id},
         }
+
+    def action_url(self):
+        return {
+            "type": "ir.actions.act_url",
+            "url": "https://odoo.com",
+            "target": "self",
+        }
+
+    def action_server_action(self):
+        for rec in self:
+            rec.amount +=100
+        _logger.info("*"*100)
+        _logger.info("*"*100)
+        _logger.info("*"*100)
+        _logger.info("*"*100)
+        _logger.info("*"*100)
+
 
 
