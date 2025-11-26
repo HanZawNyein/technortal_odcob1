@@ -12,6 +12,49 @@
         <div class="container mt-5">
             Hello world
         <h1>Welcome from IdeaCode Academy!</h1>
+
+            <div class="container mt-3">
+                <div class="d-flex">
+                    <h1><t t-esc="state.value"/></h1>
+                    <button t-on-click="value_add" class="btn btn-primary m-2">Add</button>
+                </div>
+            </div>
+            <hr/>
+            <div class="table-responsive" style="max-height: 600px;overflow-y:auto;">
+                <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                    <th scope="col">Display Name</th>
+                    <th scope="col">Create UID</th>
+                    <th scope="col">Create Date</th>
+                </tr>
+              </thead>
+                <tbody>
+                  <t t-foreach="state.partners" t-as="partner" t-key="partner.id">
+                       <tr>
+                            <th scope="row">
+                                <t t-esc="partner_index+1"/>
+                            </th>
+                           <td>
+                               <t t-esc="partner.display_name"/>
+                           </td>
+                           <td>
+                               <t t-esc="partner.create_uid[1]"/>
+                           </td>
+                           <td>
+                               <t t-esc="partner.create_date"/>
+                           </td>
+                           <td>
+                               <button class="btn btn-danger m-2" t-on-click="()=>this.deletePartners(partner.id)">Delete</button>
+                               <button class="btn btn-warning m-2" t-on-click="showEffect">showEffect</button>
+                           </td>
+                        </tr>
+                  </t>
+
+              </tbody>
+            </table>
+            </div>
         </div>
     </t>
 </templates>
