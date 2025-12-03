@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+        <SelectPartnerButton position="after">
+            <button class="btn btn-secondary" t-on-click="getRemoveAllNotes">
+                <i class="fa fa-sticky-note-o me-2" role="img"
+                   aria-label="Remove All Note" title="Remove All Note" />
+                <span class="fw-bolder fs-6">
+                    Remove All Note
+                </span>
+            </button>
+        </SelectPartnerButton>
+    </t>
+</templates>
