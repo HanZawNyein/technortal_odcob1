@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ica_hms.Root">
+<!--        <div class="container m-3">-->
+<!--            Hello, World!-->
+
+<!--        <button class="btn btn-primary" t-on-click="clickMe">Click Me</button>-->
+<!--        </div>-->
+<!--        <div class="mt-5">-->
+            <Navbar switchScreen.bind="switchScreen" currenScreen="state.currenScreen"/>
+<!--            <button t-on-click="()=>this.switchScreen('homeScreen')" class="btm btn-primary m-3">Switch</button>-->
+            <div class="container-fluid">
+                <t t-component="getScreen"/>
+            </div>
+<!--            <Partner/>-->
+<!--            <Home/>-->
+<!--        </div>-->
+    </t>
+</templates>

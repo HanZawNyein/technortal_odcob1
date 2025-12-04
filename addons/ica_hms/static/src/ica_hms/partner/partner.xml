@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ica_hms.Partner">
+        <div class="container m-5">
+            <h1>Partners</h1>
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+    </tr>
+  </thead>
+                <tbody>
+      <t t-foreach="state.partners" t-as="partner" t-key="partner.id">
+
+    <tr>
+      <th scope="row">
+          <t t-esc="partner.id"/>
+      </th>
+        <td>
+            <t t-esc="partner.display_name"/>
+        </td>
+        <td>Otto</td>
+        <td>@mdo</td>
+    </tr>
+      </t>
+  </tbody>
+</table>
+        </div>
+    </t>
+</templates>
