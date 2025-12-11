@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ica_hms.PortalComponent">
+        Hello, World!
+        <div class="container">
+            <h1><t t-esc="state.counter"/></h1>
+            <button t-on-click="addCounter" class="btn btn-primary m-2">Add + </button>
+        </div>
+    </t>
+</templates>
